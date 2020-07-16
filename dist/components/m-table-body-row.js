@@ -418,11 +418,15 @@ var MTableBodyRow = /*#__PURE__*/function (_React$Component) {
         draggableId: "row-" + this.props.index.toString(),
         index: this.props.index
       }, function (provided, snapshot) {
+        var _provided$draggablePr = provided.draggableProps,
+            providedStyle = _provided$draggablePr.style,
+            providedDraggableProps = (0, _objectWithoutProperties2["default"])(_provided$draggablePr, ["style"]);
+        var rowStyle = (0, _objectSpread2["default"])({}, _this6.getStyle(_this6.props.index, _this6.props.level), providedStyle);
         return /*#__PURE__*/React.createElement(_TableRow["default"], (0, _extends2["default"])({
           selected: hasAnyEditingRow
         }, rowProps, {
           hover: onRowClick ? true : false,
-          style: _this6.getStyle(_this6.props.index, _this6.props.level),
+          style: rowStyle,
           onClick: function onClick(event) {
             onRowClick && onRowClick(event, _this6.props.data, function (panelIndex) {
               var panel = detailPanel;
@@ -441,7 +445,7 @@ var MTableBodyRow = /*#__PURE__*/function (_React$Component) {
             });
           },
           ref: provided.innerRef
-        }, provided.draggableProps, options.draggableRowsOptions.draggableCell ? {} : provided.dragHandleProps), options.draggableRows && options.draggableRowsOptions.draggableCell && /*#__PURE__*/React.createElement(_this6.props.components.Cell, (0, _extends2["default"])({
+        }, providedDraggableProps, options.draggableRowsOptions.draggableCell ? {} : provided.dragHandleProps), options.draggableRows && options.draggableRowsOptions.draggableCell && /*#__PURE__*/React.createElement(_this6.props.components.Cell, (0, _extends2["default"])({
           value: options.draggableRowsOptions.dragCellContent,
           columnDef: {
             tableData: {
