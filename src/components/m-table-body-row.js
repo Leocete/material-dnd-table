@@ -291,7 +291,7 @@ export default class MTableBodyRow extends React.Component {
     }
   }
 
-  getStyle(index, level) {
+  getStyle(index, level, providedStyle) {
     let style = {
       transition: "all ease 300ms",
     };
@@ -300,11 +300,13 @@ export default class MTableBodyRow extends React.Component {
       style = {
         ...style,
         ...this.props.options.rowStyle(this.props.data, index, level),
+        ...providedStyle
       };
     } else if (this.props.options.rowStyle) {
       style = {
         ...style,
         ...this.props.options.rowStyle,
+        ...providedStyle
       };
     }
 
@@ -419,7 +421,7 @@ export default class MTableBodyRow extends React.Component {
                 selected={hasAnyEditingRow}
                 {...rowProps}
                 hover={onRowClick ? true : false}
-                style={rowStyle}
+                style={this.getStyle(this.props.index, this.props.level, providedStyle)}
                 onClick={(event) => {
                   onRowClick &&
                     onRowClick(event, this.props.data, (panelIndex) => {
