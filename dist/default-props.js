@@ -214,6 +214,7 @@ var defaultProps = {
     addRowPosition: "last",
     columnsButton: false,
     detailPanelType: "multiple",
+    displayDetailColumn: true,
     debounceInterval: 200,
     doubleHorizontalScroll: false,
     draggableRows: false,

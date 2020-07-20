@@ -348,10 +348,12 @@ export default class MTableBodyRow extends React.Component {
 
     // Then we add detail panel icon
     if (this.props.detailPanel) {
-      if (this.props.options.detailPanelColumnAlignment === "right") {
-        renderColumns.push(this.renderDetailPanelColumn());
-      } else {
-        renderColumns.splice(0, 0, this.renderDetailPanelColumn());
+      if (this.props.options.displayDetailColumn) {
+        if (this.props.options.detailPanelColumnAlignment === "right") {
+          renderColumns.push(this.renderDetailPanelColumn());
+        } else {
+          renderColumns.splice(0, 0, this.renderDetailPanelColumn());
+        }
       }
     }
 

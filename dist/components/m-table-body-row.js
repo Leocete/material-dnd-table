@@ -370,10 +370,12 @@ var MTableBodyRow = /*#__PURE__*/function (_React$Component) {
 
 
       if (this.props.detailPanel) {
-        if (this.props.options.detailPanelColumnAlignment === "right") {
-          renderColumns.push(this.renderDetailPanelColumn());
-        } else {
-          renderColumns.splice(0, 0, this.renderDetailPanelColumn());
+        if (this.props.options.displayDetailColumn) {
+          if (this.props.options.detailPanelColumnAlignment === "right") {
+            renderColumns.push(this.renderDetailPanelColumn());
+          } else {
+            renderColumns.splice(0, 0, this.renderDetailPanelColumn());
+          }
         }
       } // Lastly we add tree data icon
 

@@ -305,6 +305,7 @@ export const propTypes = {
     defaultExpanded: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
     debounceInterval: PropTypes.number,
     detailPanelType: PropTypes.oneOf(["single", "multiple"]),
+    displayDetailColumn: PropTypes.bool,
     doubleHorizontalScroll: PropTypes.bool,
     draggableRows: PropTypes.bool,
     draggableRowsOptions: PropTypes.shape({

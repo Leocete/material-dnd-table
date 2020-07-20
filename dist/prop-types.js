@@ -132,6 +132,7 @@ var propTypes = {
     defaultExpanded: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
     debounceInterval: _propTypes["default"].number,
     detailPanelType: _propTypes["default"].oneOf(["single", "multiple"]),
+    displayDetailColumn: _propTypes["default"].bool,
     doubleHorizontalScroll: _propTypes["default"].bool,
     draggableRows: _propTypes["default"].bool,
     draggableRowsOptions: _propTypes["default"].shape({
