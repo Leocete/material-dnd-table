@@ -33,6 +33,10 @@ var _Select = _interopRequireDefault(require("@material-ui/core/Select"));
 
 var _MenuItem = _interopRequireDefault(require("@material-ui/core/MenuItem"));
 
+var _FormControl = _interopRequireDefault(require("@material-ui/core/FormControl"));
+
+var _FormHelperText = _interopRequireDefault(require("@material-ui/core/FormHelperText"));
+
 var _dateFns = _interopRequireDefault(require("@date-io/date-fns"));
 
 var _pickers = require("@material-ui/pickers");
@@ -71,9 +75,12 @@ var MTableEditField = /*#__PURE__*/function (_React$Component) {
 
       var _this$getProps = this.getProps(),
           helperText = _this$getProps.helperText,
-          props = (0, _objectWithoutProperties2["default"])(_this$getProps, ["helperText"]);
+          error = _this$getProps.error,
+          props = (0, _objectWithoutProperties2["default"])(_this$getProps, ["helperText", "error"]);
 
-      return /*#__PURE__*/React.createElement(_Select["default"], (0, _extends2["default"])({}, props, {
+      return /*#__PURE__*/React.createElement(_FormControl["default"], {
+        error: Boolean(error)
+      }, /*#__PURE__*/React.createElement(_Select["default"], (0, _extends2["default"])({}, props, {
         value: this.props.value === undefined ? "" : this.props.value,
         onChange: function onChange(event) {
           return _this.props.onChange(event.target.value);
@@ -89,7 +96,7 @@ var MTableEditField = /*#__PURE__*/function (_React$Component) {
           key: key,
           value: key
         }, _this.props.columnDef.lookup[key]);
-      }));
+      })), Boolean(helperText) && /*#__PURE__*/React.createElement(_FormHelperText["default"], null, helperText));
     }
   }, {
     key: "renderBooleanField",

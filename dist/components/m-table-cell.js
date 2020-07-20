@@ -187,7 +187,8 @@ var MTableCell = /*#__PURE__*/function (_React$Component) {
           icons = _this$props.icons,
           columnDef = _this$props.columnDef,
           rowData = _this$props.rowData,
-          cellProps = (0, _objectWithoutProperties2["default"])(_this$props, ["icons", "columnDef", "rowData"]);
+          errorState = _this$props.errorState,
+          cellProps = (0, _objectWithoutProperties2["default"])(_this$props, ["icons", "columnDef", "rowData", "errorState"]);
       var cellAlignment = columnDef.align !== undefined ? columnDef.align : ["numeric", "currency"].indexOf(this.props.columnDef.type) !== -1 ? "right" : "left";
       return /*#__PURE__*/React.createElement(_TableCell["default"], (0, _extends2["default"])({
         size: this.props.size
