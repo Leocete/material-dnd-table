@@ -468,6 +468,7 @@ var MaterialTable = /*#__PURE__*/function (_React$Component) {
           return col.tableData.groupOrder > -1;
         }).length > 0 ? _this.state.groupedDataLength : _this.state.data.length,
         hasDetailPanel: !!props.detailPanel,
+        displayDetailPanelColumn: props.options.displayDetailPanelColumn,
         detailPanelColumnAlignment: props.options.detailPanelColumnAlignment,
         showActionsColumn: props.actions && props.actions.filter(function (a) {
           return a.position === "row" || typeof a === "function";
@@ -519,6 +520,7 @@ var MaterialTable = /*#__PURE__*/function (_React$Component) {
           showAddRow: _this.state.showAddRow,
           hasAnyEditingRow: !!(_this.state.lastEditingRow || _this.state.showAddRow),
           hasDetailPanel: !!props.detailPanel,
+          displayDetailPanelColumn: props.options.displayDetailPanelColumn,
           treeDataMaxLevel: _this.state.treeDataMaxLevel
         });
       })));

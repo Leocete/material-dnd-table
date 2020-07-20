@@ -227,10 +227,12 @@ export class MTableHeader extends React.Component {
     }
 
     if (this.props.hasDetailPanel) {
-      if (this.props.detailPanelColumnAlignment === "right") {
-        headers.push(this.renderDetailPanelColumnCell());
-      } else {
-        headers.splice(0, 0, this.renderDetailPanelColumnCell());
+      if (this.props.options.displayDetailColumn) {
+        if (this.props.detailPanelColumnAlignment === "right") {
+          headers.push(this.renderDetailPanelColumnCell());
+        } else {
+          headers.splice(0, 0, this.renderDetailPanelColumnCell());
+        }
       }
     }
 

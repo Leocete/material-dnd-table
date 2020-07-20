@@ -68,7 +68,9 @@ var MTableBody = /*#__PURE__*/function (_React$Component) {
         }
 
         if (this.props.hasDetailPanel) {
-          addColumn++;
+          if (this.props.displayDetailPanelColumn) {
+            addColumn++;
+          }
         }
 
         if (this.props.isTreeData) {
@@ -230,6 +232,7 @@ var MTableBody = /*#__PURE__*/function (_React$Component) {
           dateTimePickerLocalization: this.props.localization.dateTimePickerLocalization
         }),
         hasDetailPanel: !!this.props.detailPanel,
+        displayDetailPanelColumn: this.props.options.displayDetailPanelColumn,
         isTreeData: this.props.isTreeData,
         filterCellStyle: this.props.options.filterCellStyle,
         filterRowStyle: this.props.options.filterRowStyle,
@@ -295,6 +298,7 @@ MTableBody.propTypes = {
   getFieldValue: _propTypes["default"].func.isRequired,
   hasAnyEditingRow: _propTypes["default"].bool,
   hasDetailPanel: _propTypes["default"].bool.isRequired,
+  displayDetailPanelColumn: _propTypes["default"].bool,
   icons: _propTypes["default"].object.isRequired,
   isTreeData: _propTypes["default"].bool.isRequired,
   onRowSelected: _propTypes["default"].func,

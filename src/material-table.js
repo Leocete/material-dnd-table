@@ -791,6 +791,7 @@ export default class MaterialTable extends React.Component {
               : this.state.data.length
           }
           hasDetailPanel={!!props.detailPanel}
+          displayDetailPanelColumn={props.options.displayDetailPanelColumn}
           detailPanelColumnAlignment={props.options.detailPanelColumnAlignment}
           showActionsColumn={
             props.actions &&
@@ -854,6 +855,7 @@ export default class MaterialTable extends React.Component {
                 !!(this.state.lastEditingRow || this.state.showAddRow)
               }
               hasDetailPanel={!!props.detailPanel}
+              displayDetailPanelColumn={props.options.displayDetailPanelColumn}
               treeDataMaxLevel={this.state.treeDataMaxLevel}
             />
           )}

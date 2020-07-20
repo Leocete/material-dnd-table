@@ -300,10 +300,12 @@ var MTableFilterRow = /*#__PURE__*/function (_React$Component) {
       }
 
       if (this.props.hasDetailPanel) {
-        columns.splice(0, 0, /*#__PURE__*/React.createElement(_TableCell["default"], {
-          padding: "none",
-          key: "key-detail-panel-column"
-        }));
+        if (this.props.displayDetailPanelColumn) {
+          columns.splice(0, 0, /*#__PURE__*/React.createElement(_TableCell["default"], {
+            padding: "none",
+            key: "key-detail-panel-column"
+          }));
+        }
       }
 
       if (this.props.isTreeData > 0) {
@@ -344,6 +346,7 @@ MTableFilterRow.defaultProps = {
 MTableFilterRow.propTypes = {
   columns: _propTypes["default"].array.isRequired,
   hasDetailPanel: _propTypes["default"].bool.isRequired,
+  displayDetailPanelColumn: _propTypes["default"].bool,
   isTreeData: _propTypes["default"].bool.isRequired,
   onFilterChanged: _propTypes["default"].func.isRequired,
   filterCellStyle: _propTypes["default"].object,

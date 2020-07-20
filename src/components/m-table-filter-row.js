@@ -253,11 +253,13 @@ class MTableFilterRow extends React.Component {
     }
 
     if (this.props.hasDetailPanel) {
-      columns.splice(
-        0,
-        0,
-        <TableCell padding="none" key="key-detail-panel-column" />
-      );
+      if (this.props.displayDetailPanelColumn) {
+        columns.splice(
+          0,
+          0,
+          <TableCell padding="none" key="key-detail-panel-column" />
+        );
+      }
     }
 
     if (this.props.isTreeData > 0) {
@@ -303,6 +305,7 @@ MTableFilterRow.defaultProps = {
 MTableFilterRow.propTypes = {
   columns: PropTypes.array.isRequired,
   hasDetailPanel: PropTypes.bool.isRequired,
+  displayDetailPanelColumn: PropTypes.bool,
   isTreeData: PropTypes.bool.isRequired,
   onFilterChanged: PropTypes.func.isRequired,
   filterCellStyle: PropTypes.object,
